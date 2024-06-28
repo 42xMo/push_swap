@@ -1,19 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pushswap.c                                         :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mabdessm <mabdessm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/28 15:44:12 by mabdessm          #+#    #+#             */
-/*   Updated: 2024/06/28 16:47:26 by mabdessm         ###   ########.fr       */
+/*   Created: 2024/05/01 15:13:28 by mabdessm          #+#    #+#             */
+/*   Updated: 2024/05/01 15:45:57 by mabdessm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/pushswap.h"
+#include "libft.h"
 
-int	main(int argc, char **argv)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	if (argc > 1)
-		ft_printf("%s%i%u%x%%", argv[1], 3, 678, 45667);
+	unsigned int	i;
+	char			*res;
+
+	if (!s)
+		return (NULL);
+	i = 0;
+	res = ft_calloc(sizeof(char), ft_strlen(s) + 1);
+	if (!res)
+		return (NULL);
+	while (s[i])
+	{
+		res[i] = f(i, s[i]);
+		i++;
+	}
+	return (res);
 }

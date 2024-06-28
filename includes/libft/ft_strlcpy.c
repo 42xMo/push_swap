@@ -1,19 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pushswap.c                                         :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mabdessm <mabdessm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/28 15:44:12 by mabdessm          #+#    #+#             */
-/*   Updated: 2024/06/28 16:47:26 by mabdessm         ###   ########.fr       */
+/*   Created: 2024/04/23 20:26:40 by mabdessm          #+#    #+#             */
+/*   Updated: 2024/04/24 14:54:09 by mabdessm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/pushswap.h"
+#include "libft.h"
 
-int	main(int argc, char **argv)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	if (argc > 1)
-		ft_printf("%s%i%u%x%%", argv[1], 3, 678, 45667);
+	size_t	i;
+
+	i = 0;
+	if (size != 0)
+	{
+		while (i < size - 1 && (src[i] != '\0'))
+		{
+			dst[i] = src[i];
+			i++;
+		}
+		dst[i] = '\0';
+	}
+	return (ft_strlen(src));
 }

@@ -1,19 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pushswap.c                                         :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mabdessm <mabdessm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/28 15:44:12 by mabdessm          #+#    #+#             */
-/*   Updated: 2024/06/28 16:47:26 by mabdessm         ###   ########.fr       */
+/*   Created: 2024/05/07 13:39:25 by mabdessm          #+#    #+#             */
+/*   Updated: 2024/06/28 16:41:48 by mabdessm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/pushswap.h"
+#include "ft_printf.h"
 
-int	main(int argc, char **argv)
+/*int	ft_strlen(char *str)
 {
-	if (argc > 1)
-		ft_printf("%s%i%u%x%%", argv[1], 3, 678, 45667);
-}
+	int	i;
+
+	i = 0;
+	while (i[str])
+		++i;
+	return (i);
+}*/

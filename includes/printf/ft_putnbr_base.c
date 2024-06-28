@@ -1,19 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pushswap.c                                         :+:      :+:    :+:   */
+/*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mabdessm <mabdessm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/28 15:44:12 by mabdessm          #+#    #+#             */
-/*   Updated: 2024/06/28 16:47:26 by mabdessm         ###   ########.fr       */
+/*   Created: 2024/05/07 13:34:52 by mabdessm          #+#    #+#             */
+/*   Updated: 2024/05/08 17:31:57 by mabdessm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/pushswap.h"
+#include "ft_printf.h"
 
-int	main(int argc, char **argv)
+int	ft_putnbr_base(unsigned int nbr, char *base)
 {
-	if (argc > 1)
-		ft_printf("%s%i%u%x%%", argv[1], 3, 678, 45667);
+	int	i;
+
+	i = 0;
+	if (nbr >= (unsigned int)ft_strlen(base))
+	{
+		i += ft_putnbr_base(nbr / (unsigned int)ft_strlen(base), base);
+		i += ft_putnbr_base(nbr % (unsigned int)ft_strlen(base), base);
+	}
+	if (nbr >= 0 && nbr < (unsigned int)ft_strlen(base))
+		i += ft_putchar(base[nbr]);
+	return (i);
 }

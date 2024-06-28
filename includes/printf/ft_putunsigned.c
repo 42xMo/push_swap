@@ -1,19 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pushswap.c                                         :+:      :+:    :+:   */
+/*   ft_putunsigned.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mabdessm <mabdessm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/28 15:44:12 by mabdessm          #+#    #+#             */
-/*   Updated: 2024/06/28 16:47:26 by mabdessm         ###   ########.fr       */
+/*   Created: 2024/05/07 16:16:09 by mabdessm          #+#    #+#             */
+/*   Updated: 2024/05/08 16:57:54 by mabdessm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/pushswap.h"
+#include "ft_printf.h"
 
-int	main(int argc, char **argv)
+int	ft_putunsigned(unsigned int n)
 {
-	if (argc > 1)
-		ft_printf("%s%i%u%x%%", argv[1], 3, 678, 45667);
+	int	i;
+
+	i = 0;
+	if (n > 9)
+	{
+		i += ft_putunsigned(n / 10);
+		i += ft_putunsigned(n % 10);
+	}
+	else if (n <= 9 && n >= 0)
+		i += ft_putchar('0' + n);
+	return (i);
 }

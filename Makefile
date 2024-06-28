@@ -6,16 +6,16 @@
 #    By: mabdessm <mabdessm@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/06 14:24:37 by mabdessm          #+#    #+#              #
-#    Updated: 2024/06/28 16:06:03 by mabdessm         ###   ########.fr        #
+#    Updated: 2024/06/28 16:40:17 by mabdessm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 CC = cc
-FLAGS = -Wall -Werror -Wextra -I ./
+FLAGS = -Wall -Werror -Wextra -Iincludes
 RM = rm -rf
 
-SRCS = pushswap.c
+SRCS = pushswap.c includes/printf/*.c includes/libft/*.c
 
 OBJS = $(SRCS:.c=.o)
 
