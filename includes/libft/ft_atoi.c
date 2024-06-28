@@ -6,17 +6,17 @@
 /*   By: mabdessm <mabdessm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 12:22:07 by mabdessm          #+#    #+#             */
-/*   Updated: 2024/04/26 12:39:47 by mabdessm         ###   ########.fr       */
+/*   Updated: 2024/06/28 17:58:11 by mabdessm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *nptr)
+long	ft_atoi(const char *nptr)
 {
-	int	i;
-	int	signe;
-	int	x;
+	long	i;
+	int		signe;
+	long	x;
 
 	i = 0;
 	x = 0;
