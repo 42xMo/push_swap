@@ -1,21 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pushswap.h                                         :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mabdessm <mabdessm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/25 17:50:54 by mabdessm          #+#    #+#             */
-/*   Updated: 2024/06/28 16:26:02 by mabdessm         ###   ########.fr       */
+/*   Created: 2024/04/26 13:28:38 by mabdessm          #+#    #+#             */
+/*   Updated: 2024/04/26 13:36:51 by mabdessm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSHSWAP_H
-# define PUSHSWAP_H
+#include "libft.h"
 
-# include <unistd.h>
-# include <stdlib.h>
-#include "libft/libft.h"
-#include "printf/ft_printf.h"
+char	*ft_strdup(const char *s)
+{
+	int		i;
+	char	*res;
 
-#endif
+	i = 0;
+	res = malloc(sizeof(char) * (ft_strlen(s) + 1));
+	if (!res)
+		return (NULL);
+	while (s[i] != '\0')
+	{
+		res[i] = s[i];
+		i++;
+	}
+	res[i] = '\0';
+	return (res);
+}

@@ -6,7 +6,7 @@
 #    By: mabdessm <mabdessm@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/06 14:24:37 by mabdessm          #+#    #+#              #
-#    Updated: 2024/06/06 14:57:16 by mabdessm         ###   ########.fr        #
+#    Updated: 2024/06/28 16:06:03 by mabdessm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,12 +15,12 @@ CC = cc
 FLAGS = -Wall -Werror -Wextra -I ./
 RM = rm -rf
 
-SRCS =
+SRCS = pushswap.c
 
 OBJS = $(SRCS:.c=.o)
 
-.c.o:
-	$(CC) $(FLAGS) -c $< -o $(<:.c=.o)
+$(NAME):
+	$(CC) $(FLAGS) $(SRCS) -o $(NAME)
 
 all: $(NAME)
 

@@ -1,21 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pushswap.h                                         :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mabdessm <mabdessm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/25 17:50:54 by mabdessm          #+#    #+#             */
-/*   Updated: 2024/06/28 16:26:02 by mabdessm         ###   ########.fr       */
+/*   Created: 2024/04/24 16:19:16 by mabdessm          #+#    #+#             */
+/*   Updated: 2024/04/24 17:18:19 by mabdessm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSHSWAP_H
-# define PUSHSWAP_H
+#include "libft.h"
 
-# include <unistd.h>
-# include <stdlib.h>
-#include "libft/libft.h"
-#include "printf/ft_printf.h"
+char	*ft_strchr(const char *s, int c)
+{
+	int	i;
 
-#endif
+	i = 0;
+	while (s[i] != '\0')
+	{
+		if (s[i] == (char)c)
+			return ((char *)s + i);
+		i++;
+	}
+	if (c == '\0')
+		return ((char *)s + i);
+	return (NULL);
+}

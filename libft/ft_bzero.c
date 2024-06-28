@@ -1,21 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pushswap.h                                         :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mabdessm <mabdessm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/25 17:50:54 by mabdessm          #+#    #+#             */
-/*   Updated: 2024/06/28 16:26:02 by mabdessm         ###   ########.fr       */
+/*   Created: 2024/04/23 16:08:04 by mabdessm          #+#    #+#             */
+/*   Updated: 2024/04/26 13:22:59 by mabdessm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSHSWAP_H
-# define PUSHSWAP_H
+#include "libft.h"
 
-# include <unistd.h>
-# include <stdlib.h>
-#include "libft/libft.h"
-#include "printf/ft_printf.h"
+void	ft_bzero(void *s, size_t n)
+{
+	size_t	i;
 
-#endif
+	i = 0;
+	while (i < n)
+	{
+		((char *)s)[i] = '\0';
+		i++;
+	}
+}

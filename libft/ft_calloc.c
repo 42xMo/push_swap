@@ -1,21 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pushswap.h                                         :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mabdessm <mabdessm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/25 17:50:54 by mabdessm          #+#    #+#             */
-/*   Updated: 2024/06/28 16:26:02 by mabdessm         ###   ########.fr       */
+/*   Created: 2024/04/26 12:40:25 by mabdessm          #+#    #+#             */
+/*   Updated: 2024/04/26 13:28:09 by mabdessm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSHSWAP_H
-# define PUSHSWAP_H
+#include "libft.h"
 
-# include <unistd.h>
-# include <stdlib.h>
-#include "libft/libft.h"
-#include "printf/ft_printf.h"
+void	*ft_calloc(size_t nmemb, size_t size)
+{
+	void	*res;
 
-#endif
+	if ((size >= 65535 && nmemb >= 65535) || size * nmemb >= 65535)
+		return (NULL);
+	res = (void *)malloc(nmemb * size);
+	if (!res)
+		return (NULL);
+	ft_bzero(res, (nmemb * size));
+	return (res);
+}

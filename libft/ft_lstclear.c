@@ -1,21 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pushswap.h                                         :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mabdessm <mabdessm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/25 17:50:54 by mabdessm          #+#    #+#             */
-/*   Updated: 2024/06/28 16:26:02 by mabdessm         ###   ########.fr       */
+/*   Created: 2024/05/02 17:16:31 by mabdessm          #+#    #+#             */
+/*   Updated: 2024/05/02 18:13:54 by mabdessm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSHSWAP_H
-# define PUSHSWAP_H
+#include "libft.h"
 
-# include <unistd.h>
-# include <stdlib.h>
-#include "libft/libft.h"
-#include "printf/ft_printf.h"
+void	ft_lstclear(t_list **lst, void (*del)(void*))
+{
+	t_list	*temp;
 
-#endif
+	if (!lst || !(*lst) || !del)
+		return ;
+	while (lst && *lst)
+	{
+		temp = (*lst)->next;
+		ft_lstdelone(*lst, del);
+		*lst = temp;
+	}
+}

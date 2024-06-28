@@ -1,21 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pushswap.h                                         :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mabdessm <mabdessm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/25 17:50:54 by mabdessm          #+#    #+#             */
-/*   Updated: 2024/06/28 16:26:02 by mabdessm         ###   ########.fr       */
+/*   Created: 2024/05/07 13:28:38 by mabdessm          #+#    #+#             */
+/*   Updated: 2024/05/07 17:46:45 by mabdessm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSHSWAP_H
-# define PUSHSWAP_H
+#include "ft_printf.h"
 
-# include <unistd.h>
-# include <stdlib.h>
-#include "libft/libft.h"
-#include "printf/ft_printf.h"
+int	ft_putnbr(int n)
+{
+	int	i;
 
-#endif
+	i = 0;
+	if (n == -2147483648)
+	{
+		i += ft_putchar('-');
+		i += ft_putchar('2');
+		i += ft_putnbr(147483648);
+	}
+	else if (n < 0)
+	{
+		i += ft_putchar('-');
+		i += ft_putnbr(n * -1);
+	}
+	else if (n > 9)
+	{
+		i += ft_putnbr(n / 10);
+		i += ft_putnbr(n % 10);
+	}
+	else if (n <= 9 && n >= 0)
+		i += ft_putchar('0' + n);
+	return (i);
+}

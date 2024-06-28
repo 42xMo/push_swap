@@ -1,21 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pushswap.h                                         :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mabdessm <mabdessm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/25 17:50:54 by mabdessm          #+#    #+#             */
-/*   Updated: 2024/06/28 16:26:02 by mabdessm         ###   ########.fr       */
+/*   Created: 2024/04/23 17:40:11 by mabdessm          #+#    #+#             */
+/*   Updated: 2024/04/23 19:53:44 by mabdessm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSHSWAP_H
-# define PUSHSWAP_H
+#include "libft.h"
 
-# include <unistd.h>
-# include <stdlib.h>
-#include "libft/libft.h"
-#include "printf/ft_printf.h"
+void	*ft_memmove(void *dest, const void *src, size_t n)
+{
+	size_t			i;
+	unsigned char	*d;
+	unsigned char	*s;
 
-#endif
+	i = 0;
+	d = (unsigned char *)dest;
+	s = (unsigned char *)src;
+	if (d == s || n == 0)
+		return (dest);
+	if (d < s)
+	{
+		while (i < n)
+		{
+			d[i] = s[i];
+			i++;
+		}
+	}
+	else
+	{
+		i = n;
+		while (--i + 1 > 0)
+			d[i] = s[i];
+	}
+	return (dest);
+}
