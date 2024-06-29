@@ -6,7 +6,7 @@
 #    By: mabdessm <mabdessm@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/06 14:24:37 by mabdessm          #+#    #+#              #
-#    Updated: 2024/06/28 16:40:17 by mabdessm         ###   ########.fr        #
+#    Updated: 2024/06/29 11:35:53 by mabdessm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ CC = cc
 FLAGS = -Wall -Werror -Wextra -Iincludes
 RM = rm -rf
 
-SRCS = pushswap.c includes/printf/*.c includes/libft/*.c
+SRCS = pushswap/*.c printf/*.c libft/*.c
 
 OBJS = $(SRCS:.c=.o)
 

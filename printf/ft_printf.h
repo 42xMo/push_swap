@@ -1,20 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pushswap.h                                         :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mabdessm <mabdessm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/25 17:50:54 by mabdessm          #+#    #+#             */
-/*   Updated: 2024/06/28 16:41:24 by mabdessm         ###   ########.fr       */
+/*   Created: 2024/05/07 17:46:13 by mabdessm          #+#    #+#             */
+/*   Updated: 2024/06/29 11:32:57 by mabdessm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSHSWAP_H
-# define PUSHSWAP_H
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
-# include <unistd.h>
+# include <stdarg.h>
 # include <stdlib.h>
-#include "printf/ft_printf.h"
+# include <unistd.h>
+# include "../libft/libft.h"
+
+//int	ft_strlen(char *str);
+int	ft_putchar(char c);
+int	ft_putstr(char *str);
+int	ft_putnbr(int n);
+int	ft_putunsigned(unsigned int n);
+int	ft_putnbr_base(unsigned int nbr, char *base);
+int	ft_putnbr_base_p(unsigned long nbr, char *base);
+int	ft_printf(const char *str, ...);
 
 #endif

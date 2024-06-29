@@ -6,7 +6,7 @@
 /*   By: mabdessm <mabdessm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 10:54:42 by mabdessm          #+#    #+#             */
-/*   Updated: 2024/06/28 17:57:25 by mabdessm         ###   ########.fr       */
+/*   Updated: 2024/06/29 11:21:55 by mabdessm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 
 # include <stdlib.h>
 # include <unistd.h>
-
-#define	BUFFER 1
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
