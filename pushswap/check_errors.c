@@ -6,7 +6,7 @@
 /*   By: mabdessm <mabdessm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/29 12:43:23 by mabdessm          #+#    #+#             */
-/*   Updated: 2024/06/29 12:44:15 by mabdessm         ###   ########.fr       */
+/*   Updated: 2024/07/01 09:40:45 by mabdessm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int	no_duplicates(char **argv, int argc)
 	int	i;
 	int	j;
 
-	i = 0;
+	i = 1;
 	while (i < argc)
 	{
 		j = i + 1;
