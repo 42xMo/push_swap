@@ -6,7 +6,7 @@
 /*   By: mabdessm <mabdessm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 17:50:54 by mabdessm          #+#    #+#             */
-/*   Updated: 2024/06/29 12:45:04 by mabdessm         ###   ########.fr       */
+/*   Updated: 2024/06/29 14:34:05 by mabdessm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,12 @@
 
 int	no_error(char **argv, int argc);
 int	no_duplicates(char **argv, int argc);
+
+//typedef	struct s_stack
+//{
+//	int				content;
+//	struct s_stack	*next;
+//	struct s_stack	*prev;
+//}	t_stack;
 
 #endif

@@ -6,13 +6,13 @@
 /*   By: mabdessm <mabdessm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 12:44:08 by mabdessm          #+#    #+#             */
-/*   Updated: 2024/05/02 13:05:18 by mabdessm         ###   ########.fr       */
+/*   Updated: 2024/06/29 14:55:10 by mabdessm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void *content)
+t_list	*ft_lstnew(long content)
 {
 	t_list	*newlst;
 
