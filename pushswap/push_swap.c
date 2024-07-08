@@ -6,7 +6,7 @@
 /*   By: mabdessm <mabdessm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/29 11:28:45 by mabdessm          #+#    #+#             */
-/*   Updated: 2024/07/01 13:33:51 by mabdessm         ###   ########.fr       */
+/*   Updated: 2024/07/08 17:08:01 by mabdessm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,54 +46,15 @@ int	main(int argc, char **argv)
 			i = 1;
 			while (++i < argc)
 				ft_lstadd_back(&a, ft_lstnew(ft_atoi(argv[i])));
-			/*TESTING*/
-			ft_printf(" ================\n");
-			ft_printf("a : %d\nb : %d\n", ft_lstsize(a), ft_lstsize(b));
-			show_stacks(a, b);
-			ft_printf(" ================\n");
-			swap(&a);
-			ft_printf("swap(a)\n");
-			ft_printf("a : %d\nb : %d\n", ft_lstsize(a), ft_lstsize(b));
-			show_stacks(a, b);
-			ft_printf(" ================\n");
-			push(&b, &a);
-			ft_printf("push(b, a)\n");
-			ft_printf("a : %d\nb : %d\n", ft_lstsize(a), ft_lstsize(b));
-			show_stacks(a, b);
-			ft_printf(" ================\n");
-			rotate(&a);
-			ft_printf("rotate(a)\n");
-			ft_printf("a : %d\nb : %d\n", ft_lstsize(a), ft_lstsize(b));
-			show_stacks(a, b);
-			ft_printf(" ================\n");
-			reverse_rotate(&a);
-			ft_printf("reverse_rotate(a)\n");
-			ft_printf("a : %d\nb : %d\n", ft_lstsize(a), ft_lstsize(b));
-			show_stacks(a, b);
-			ft_printf(" ================\n");
-			push(&b, &a);
-			push(&b, &a);
-			ft_printf("push(b, a)\npush(b, a)\n");
-			ft_printf("a : %d\nb : %d\n", ft_lstsize(a), ft_lstsize(b));
-			show_stacks(a, b);
-			ft_printf(" ================\n");
-			sswap(&a, &b);
-			ft_printf("sswap(a, b)\n");
-			ft_printf("a : %d\nb : %d\n", ft_lstsize(a), ft_lstsize(b));
-			show_stacks(a, b);
-			ft_printf(" ================\n");
-			rrotate(&a, &b);
-			ft_printf("rrotate(a, b)\n");
-			ft_printf("a : %d\nb : %d\n", ft_lstsize(a), ft_lstsize(b));
-			show_stacks(a, b);
-			ft_printf(" ================\n");
-			rreverse_rrotate(&a, &b);
-			ft_printf("rreverse_rrotate(a, b)\n");
-			ft_printf("a : %d\nb : %d\n", ft_lstsize(a), ft_lstsize(b));
-			show_stacks(a, b);
-			ft_printf(" ================\n");
-			/*TESTING*/
-			/*Test Example   ./push_swap 92 61 12 -57 84 -12   */
+			if (A_is_sorted(a))
+				return (0);
+			 	//ft_printf("sorted");
+			//show_stacks(a, b);
+			if (ft_lstsize(a) <= 5)
+			 	sort_small_stack(&a, &b);
+			//show_stacks(a, b);
+			//  else
+			//  	sort_big_stack(a, b);
 		}
 		else
 			ft_printf("Error\n");
