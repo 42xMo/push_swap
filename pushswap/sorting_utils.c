@@ -6,7 +6,7 @@
 /*   By: mabdessm <mabdessm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 15:52:30 by mabdessm          #+#    #+#             */
-/*   Updated: 2024/07/10 18:01:57 by mabdessm         ###   ########.fr       */
+/*   Updated: 2024/07/10 18:04:34 by mabdessm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,8 @@ void	sort_three(t_list **a)
 
 void	sort_small_stack(t_list **a, t_list **b)
 {
+	if (ft_lstsize(*b) == 9999)
+		return;
 	if (ft_lstsize(*a) == 2)
 		swap(a, 'a');
 	else if (ft_lstsize(*a) == 3)
