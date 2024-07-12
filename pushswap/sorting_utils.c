@@ -6,7 +6,7 @@
 /*   By: mabdessm <mabdessm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 15:52:30 by mabdessm          #+#    #+#             */
-/*   Updated: 2024/07/12 16:55:53 by mabdessm         ###   ########.fr       */
+/*   Updated: 2024/07/12 17:17:48 by mabdessm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,7 +111,6 @@ void	sort_five(t_list **a, t_list **b)
 		push(a, b, 'a');
 		rotate(a, 'a');
 	}
-	index_stack(a);
 }
 
 void	sort_small_stack(t_list **a, t_list **b)
