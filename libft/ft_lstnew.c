@@ -6,7 +6,7 @@
 /*   By: mabdessm <mabdessm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 12:44:08 by mabdessm          #+#    #+#             */
-/*   Updated: 2024/06/29 14:55:10 by mabdessm         ###   ########.fr       */
+/*   Updated: 2024/07/12 14:41:43 by mabdessm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ t_list	*ft_lstnew(long content)
 	if (!newlst)
 		return (NULL);
 	newlst->content = content;
+	newlst->index = -1;
 	newlst->next = NULL;
 	return (newlst);
 }

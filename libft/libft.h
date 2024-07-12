@@ -6,7 +6,7 @@
 /*   By: mabdessm <mabdessm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 10:54:42 by mabdessm          #+#    #+#             */
-/*   Updated: 2024/06/29 14:58:49 by mabdessm         ###   ########.fr       */
+/*   Updated: 2024/07/12 14:29:14 by mabdessm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ void	ft_putnbr_fd(int n, int fd);
 typedef struct s_list
 {
 	long			content;
+	int				index;
 	struct s_list	*next;
 }	t_list;
 
