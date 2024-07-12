@@ -6,7 +6,7 @@
 /*   By: mabdessm <mabdessm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/29 11:28:45 by mabdessm          #+#    #+#             */
-/*   Updated: 2024/07/12 16:14:03 by mabdessm         ###   ########.fr       */
+/*   Updated: 2024/07/12 18:10:04 by mabdessm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,10 +49,10 @@ int	main(int argc, char **argv)
 			if (A_is_sorted(a))
 				return (0);
 			index_stack(&a);
-			show_stacks(a, b);
+			//show_stacks(a, b);
 			if (ft_lstsize(a) <= 5)
 			 	sort_small_stack(&a, &b);
-			show_stacks(a, b);
+			//show_stacks(a, b);
 			//  else
 			//  	sort_big_stack(a, b);
 		}

@@ -6,7 +6,7 @@
 /*   By: mabdessm <mabdessm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 15:52:30 by mabdessm          #+#    #+#             */
-/*   Updated: 2024/07/12 17:17:48 by mabdessm         ###   ########.fr       */
+/*   Updated: 2024/07/12 18:01:36 by mabdessm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ void	sort_three(t_list **a)
 {
 	t_list	*temp;
 
+	if (A_is_sorted(*a))
+		return ;
 	if ((*a)->content == ft_min(*a))
 	{
 		swap(a, 'a');
@@ -99,7 +101,13 @@ void	sort_five(t_list **a, t_list **b)
 		swap(a, 'a');
 		reverse_rotate(a, 'a');
 	}
-	else if ((*b)->index == 3)
+	else
+		sort_five_2(a, b);
+}
+
+void	sort_five_2(t_list **a, t_list **b)
+{
+	if ((*b)->index == 3)
 	{
 		reverse_rotate(a, 'a');
 		push(a, b, 'a');

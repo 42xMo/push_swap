@@ -6,7 +6,7 @@
 /*   By: mabdessm <mabdessm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 17:50:54 by mabdessm          #+#    #+#             */
-/*   Updated: 2024/07/12 15:51:07 by mabdessm         ###   ########.fr       */
+/*   Updated: 2024/07/12 17:54:05 by mabdessm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ int		A_is_sorted(t_list *a);
 void	sort_three(t_list **a);
 void	sort_four(t_list **a, t_list **b);
 void	sort_five(t_list **a, t_list **b);
+void	sort_five_2(t_list **a, t_list **b);
 void	sort_small_stack(t_list **a, t_list **b);
 
 #endif
