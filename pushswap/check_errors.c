@@ -6,7 +6,7 @@
 /*   By: mabdessm <mabdessm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/29 12:43:23 by mabdessm          #+#    #+#             */
-/*   Updated: 2024/07/14 09:10:16 by mabdessm         ###   ########.fr       */
+/*   Updated: 2024/07/14 11:28:30 by mabdessm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,10 +58,10 @@ int	no_duplicates(char **argv, int argc)
 	return (1);
 }
 
-int	A_is_sorted(t_list *a)
+int	a_is_sorted(t_list *a)
 {
 	long	tmp;
-	
+
 	while (a && a->next)
 	{
 		tmp = a->content;

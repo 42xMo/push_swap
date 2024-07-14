@@ -6,7 +6,7 @@
 /*   By: mabdessm <mabdessm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 09:55:12 by mabdessm          #+#    #+#             */
-/*   Updated: 2024/07/10 15:15:01 by mabdessm         ###   ########.fr       */
+/*   Updated: 2024/07/14 11:27:13 by mabdessm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	swap(t_list **stack, char c)
 {
 	t_list	*temp;
-	
+
 	if (!stack || !(*stack)->next)
 		return ;
 	temp = *stack;
@@ -31,7 +31,7 @@ void	swap(t_list **stack, char c)
 void	push(t_list **stack_1, t_list **stack_2, char c)
 {
 	t_list	*temp;
-	
+
 	if (!stack_2)
 		return ;
 	temp = *stack_1;

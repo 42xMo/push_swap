@@ -6,7 +6,7 @@
 /*   By: mabdessm <mabdessm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 15:52:30 by mabdessm          #+#    #+#             */
-/*   Updated: 2024/07/14 09:17:06 by mabdessm         ###   ########.fr       */
+/*   Updated: 2024/07/14 11:28:14 by mabdessm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	sort_three(t_list **a)
 {
 	t_list	*temp;
 
-	if (A_is_sorted(*a))
+	if (a_is_sorted(*a))
 		return ;
 	if ((*a)->content == ft_min(*a))
 	{
@@ -26,7 +26,7 @@ void	sort_three(t_list **a)
 	else if ((*a)->content == ft_max(*a))
 	{
 		rotate(a, 'a');
-		if (!(A_is_sorted(*a)))
+		if (!(a_is_sorted(*a)))
 			swap(a, 'a');
 	}
 	else

@@ -6,13 +6,13 @@
 /*   By: mabdessm <mabdessm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/29 11:28:45 by mabdessm          #+#    #+#             */
-/*   Updated: 2024/07/14 11:24:50 by mabdessm         ###   ########.fr       */
+/*   Updated: 2024/07/14 11:27:23 by mabdessm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-//for testing
+// for testing
 void	show_stacks(t_list *stack_a, t_list *stack_b)
 {
 	ft_printf("stack_a :\n");
@@ -33,13 +33,13 @@ void	show_stacks(t_list *stack_a, t_list *stack_b)
 
 void	ft_sort(t_list **a, t_list **b)
 {
-		index_stack(a);
-		show_stacks(*a, *b);
-		if (ft_lstsize(*a) <= 5)
-		 	sort_small_stack(a, b);
-		else
-		  	sort_big_stack(a, b);
-		show_stacks(*a, *b);
+	index_stack(a);
+	show_stacks(*a, *b);
+	if (ft_lstsize(*a) <= 5)
+		sort_small_stack(a, b);
+	else
+		sort_big_stack(a, b);
+	show_stacks(*a, *b);
 }
 
 int	main(int argc, char **argv)
@@ -57,7 +57,7 @@ int	main(int argc, char **argv)
 			i = 1;
 			while (++i < argc)
 				ft_lstadd_back(&a, ft_lstnew(ft_atoi(argv[i])));
-			if (!(A_is_sorted(a)))
+			if (!(a_is_sorted(a)))
 				ft_sort(&a, &b);
 			free_stack(&a);
 		}

@@ -6,7 +6,7 @@
 /*   By: mabdessm <mabdessm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 17:50:54 by mabdessm          #+#    #+#             */
-/*   Updated: 2024/07/14 11:24:06 by mabdessm         ###   ########.fr       */
+/*   Updated: 2024/07/14 11:27:31 by mabdessm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	reverse_rotate(t_list **stack, char c);
 void	sswap(t_list **stack_a, t_list **stack_b);
 void	rrotate(t_list **stack_a, t_list **stack_b);
 void	rreverse_rrotate(t_list **stack_a, t_list **stack_b);
-int		A_is_sorted(t_list *a);
+int		a_is_sorted(t_list *a);
 int		ft_min(t_list *a);
 int		ft_max(t_list *a);
 t_list	*next_min(t_list **stack);
