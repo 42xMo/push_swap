@@ -6,7 +6,7 @@
 /*   By: mabdessm <mabdessm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 17:50:54 by mabdessm          #+#    #+#             */
-/*   Updated: 2024/07/14 10:31:15 by mabdessm         ###   ########.fr       */
+/*   Updated: 2024/07/14 11:24:06 by mabdessm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,6 @@ void	sort_five(t_list **a, t_list **b);
 void	sort_five_2(t_list **a, t_list **b);
 void	sort_small_stack(t_list **a, t_list **b);
 void	sort_big_stack(t_list **a, t_list **b);
+void	ft_sort(t_list **a, t_list **b);
 
 #endif
