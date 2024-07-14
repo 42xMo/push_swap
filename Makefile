@@ -6,13 +6,13 @@
 #    By: mabdessm <mabdessm@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/06 14:24:37 by mabdessm          #+#    #+#              #
-#    Updated: 2024/07/01 13:10:00 by mabdessm         ###   ########.fr        #
+#    Updated: 2024/07/14 10:49:10 by mabdessm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 CC = cc
-FLAGS = -Wall -Werror -Wextra -Iincludes
+FLAGS = -Wall -Werror -Wextra -Iincludes -fsanitize=address
 RM = rm -rf
 
 SRCS = pushswap/*.c printf/*.c libft/*.c

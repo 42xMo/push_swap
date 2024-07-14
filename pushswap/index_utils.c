@@ -6,7 +6,7 @@
 /*   By: mabdessm <mabdessm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/12 14:27:11 by mabdessm          #+#    #+#             */
-/*   Updated: 2024/07/12 15:49:33 by mabdessm         ###   ########.fr       */
+/*   Updated: 2024/07/14 10:31:02 by mabdessm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,5 +73,20 @@ void	index_stack(t_list **stack)
 		temp->index = index;
 		temp = next_min(stack);
 		++index;
+	}
+}
+
+void	free_stack(t_list **stack)
+{
+	t_list	*tmp;
+
+	if (!stack)
+		return ;
+	while (*stack)
+	{
+		tmp = (*stack)->next;
+		(*stack)->content = 0;
+		free(*stack);
+		*stack = tmp;
 	}
 }

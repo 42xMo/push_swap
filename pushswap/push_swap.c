@@ -6,7 +6,7 @@
 /*   By: mabdessm <mabdessm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/29 11:28:45 by mabdessm          #+#    #+#             */
-/*   Updated: 2024/07/12 18:10:04 by mabdessm         ###   ########.fr       */
+/*   Updated: 2024/07/14 10:51:37 by mabdessm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,14 +47,18 @@ int	main(int argc, char **argv)
 			while (++i < argc)
 				ft_lstadd_back(&a, ft_lstnew(ft_atoi(argv[i])));
 			if (A_is_sorted(a))
+			{
+				free_stack(&a);
 				return (0);
+			}
 			index_stack(&a);
 			//show_stacks(a, b);
 			if (ft_lstsize(a) <= 5)
 			 	sort_small_stack(&a, &b);
+			else
+			  	sort_big_stack(&a, &b);
 			//show_stacks(a, b);
-			//  else
-			//  	sort_big_stack(a, b);
+			free_stack(&a);
 		}
 		else
 			ft_printf("Error\n");
