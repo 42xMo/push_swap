@@ -1,30 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sorting_utils.c                                    :+:      :+:    :+:   */
+/*   sort_small_stack.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mabdessm <mabdessm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 15:52:30 by mabdessm          #+#    #+#             */
-/*   Updated: 2024/07/12 18:01:36 by mabdessm         ###   ########.fr       */
+/*   Updated: 2024/07/14 09:17:06 by mabdessm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-
-int	A_is_sorted(t_list *a)
-{
-	long	tmp;
-	
-	while (a && a->next)
-	{
-		tmp = a->content;
-		a = a->next;
-		if (tmp > a->content)
-			return (0);
-	}
-	return (1);
-}
 
 void	sort_three(t_list **a)
 {

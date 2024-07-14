@@ -6,7 +6,7 @@
 /*   By: mabdessm <mabdessm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/29 12:43:23 by mabdessm          #+#    #+#             */
-/*   Updated: 2024/07/01 09:40:45 by mabdessm         ###   ########.fr       */
+/*   Updated: 2024/07/14 09:10:16 by mabdessm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,20 @@ int	no_duplicates(char **argv, int argc)
 			++j;
 		}
 		++i;
+	}
+	return (1);
+}
+
+int	A_is_sorted(t_list *a)
+{
+	long	tmp;
+	
+	while (a && a->next)
+	{
+		tmp = a->content;
+		a = a->next;
+		if (tmp > a->content)
+			return (0);
 	}
 	return (1);
 }
