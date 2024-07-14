@@ -6,7 +6,7 @@
 /*   By: mabdessm <mabdessm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/29 11:28:45 by mabdessm          #+#    #+#             */
-/*   Updated: 2024/07/14 10:51:37 by mabdessm         ###   ########.fr       */
+/*   Updated: 2024/07/14 10:54:26 by mabdessm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,12 +52,12 @@ int	main(int argc, char **argv)
 				return (0);
 			}
 			index_stack(&a);
-			//show_stacks(a, b);
+			show_stacks(a, b);
 			if (ft_lstsize(a) <= 5)
 			 	sort_small_stack(&a, &b);
 			else
 			  	sort_big_stack(&a, &b);
-			//show_stacks(a, b);
+			show_stacks(a, b);
 			free_stack(&a);
 		}
 		else
