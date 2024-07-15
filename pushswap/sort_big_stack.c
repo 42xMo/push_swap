@@ -6,7 +6,7 @@
 /*   By: mabdessm <mabdessm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/14 09:17:46 by mabdessm          #+#    #+#             */
-/*   Updated: 2024/07/14 11:04:08 by mabdessm         ###   ########.fr       */
+/*   Updated: 2024/07/15 14:40:41 by mabdessm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 void	sort_big_stack(t_list **a, t_list **b)
 {
-	if (ft_lstsize(*b) == 999)
-		return ;
-	if (ft_lstsize(*a) == 999)
+	if (ft_lstsize(*a) == ft_lstsize(*b) + 999)
 		return ;
 }
