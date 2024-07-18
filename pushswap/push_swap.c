@@ -6,7 +6,7 @@
 /*   By: mabdessm <mabdessm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/29 11:28:45 by mabdessm          #+#    #+#             */
-/*   Updated: 2024/07/18 18:18:21 by mabdessm         ###   ########.fr       */
+/*   Updated: 2024/07/18 19:11:07 by mabdessm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,9 +59,7 @@ int	main(int argc, char **argv)
 			prev = a;
 			while (++i < argc)
 			{
-				//ft_lstadd_back(&a, ft_lstnew(ft_atoi(argv[i]), prev, i));
 				ft_lstadd_back(&prev, ft_lstnew(ft_atoi(argv[i]), prev, i));
-				//prev = a;
 				prev = prev->next;
 			}
 			if (!(a_is_sorted(a)))
