@@ -6,7 +6,7 @@
 /*   By: mabdessm <mabdessm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/12 14:27:11 by mabdessm          #+#    #+#             */
-/*   Updated: 2024/07/14 10:31:02 by mabdessm         ###   ########.fr       */
+/*   Updated: 2024/07/18 18:04:15 by mabdessm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,16 +63,16 @@ t_list	*next_min(t_list **stack)
 
 void	index_stack(t_list **stack)
 {
-	int		index;
+	int		i;
 	t_list	*temp;
 
-	index = 0;
+	i = 0;
 	temp = next_min(stack);
 	while (temp)
 	{
-		temp->index = index;
+		temp->index = i;
 		temp = next_min(stack);
-		++index;
+		++i;
 	}
 }
 

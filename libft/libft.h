@@ -6,7 +6,7 @@
 /*   By: mabdessm <mabdessm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 10:54:42 by mabdessm          #+#    #+#             */
-/*   Updated: 2024/07/12 14:29:14 by mabdessm         ###   ########.fr       */
+/*   Updated: 2024/07/18 18:05:13 by mabdessm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,10 +55,12 @@ typedef struct s_list
 {
 	long			content;
 	int				index;
+	int				pos;
 	struct s_list	*next;
+	struct s_list	*prev;
 }	t_list;
 
-t_list	*ft_lstnew(long content);
+t_list	*ft_lstnew(long content, t_list *previous, int position);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 int		ft_lstsize(t_list *lst);
 t_list	*ft_lstlast(t_list *lst);

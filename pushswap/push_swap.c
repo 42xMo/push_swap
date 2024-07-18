@@ -6,7 +6,7 @@
 /*   By: mabdessm <mabdessm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/29 11:28:45 by mabdessm          #+#    #+#             */
-/*   Updated: 2024/07/15 14:41:25 by mabdessm         ###   ########.fr       */
+/*   Updated: 2024/07/18 18:18:21 by mabdessm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,19 +47,25 @@ int	main(int argc, char **argv)
 	int		i;
 	t_list	*a;
 	t_list	*b;
+	t_list	*prev;
 
 	if (argc > 1)
 	{
 		if (no_error(argv, argc) && no_duplicates(argv, argc))
 		{
-			a = ft_lstnew(ft_atoi(argv[1]));
-			b = NULL;
 			i = 1;
+			a = ft_lstnew(ft_atoi(argv[1]), NULL, i);
+			b = NULL;
+			prev = a;
 			while (++i < argc)
-				ft_lstadd_back(&a, ft_lstnew(ft_atoi(argv[i])));
+			{
+				//ft_lstadd_back(&a, ft_lstnew(ft_atoi(argv[i]), prev, i));
+				ft_lstadd_back(&prev, ft_lstnew(ft_atoi(argv[i]), prev, i));
+				//prev = a;
+				prev = prev->next;
+			}
 			if (!(a_is_sorted(a)))
 				ft_sort(&a, &b);
-			index_stack(&a);
 			free_stack(&a);
 		}
 		else
