@@ -6,7 +6,7 @@
 /*   By: mabdessm <mabdessm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/14 09:17:46 by mabdessm          #+#    #+#             */
-/*   Updated: 2024/07/18 20:43:08 by mabdessm         ###   ########.fr       */
+/*   Updated: 2024/07/20 05:38:00 by mabdessm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,15 @@
 
 void	sort_big_stack(t_list **a, t_list **b)
 {
-	//if (ft_lstsize(*a) == ft_lstsize(*b) + 999)
-	//	return ;
-	if (ft_lstsize(*a) <= 100)
+	if (ft_lstsize(*a) == ft_lstsize(*b) + 999)
+		return ;
+	/*if (ft_lstsize(*a) <= 100)
 		sort_100(a, b);
 	else
-		sort_500(a, b);
+		sort_500(a, b);*/
 }
 
-void	sort_100(t_list **a, t_list **b)
+/*void	sort_100(t_list **a, t_list **b)
 {
 	t_list	*temp;
 	int		i;
@@ -111,8 +111,8 @@ void	sort_100(t_list **a, t_list **b)
 	//STEP 4
 	
 	
-}
+}*/
 
-void	sort_500(t_list **a, t_list **b)
-{
-}
+//void	sort_500(t_list **a, t_list **b)
+//{
+//}
