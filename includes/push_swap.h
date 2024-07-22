@@ -6,7 +6,7 @@
 /*   By: mabdessm <mabdessm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 17:50:54 by mabdessm          #+#    #+#             */
-/*   Updated: 2024/07/20 01:04:50 by mabdessm         ###   ########.fr       */
+/*   Updated: 2024/07/22 10:39:33 by mabdessm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,9 @@
 
 int		no_error(char **argv, int argc);
 int		no_duplicates(char **argv, int argc);
+void	printf_instruction(char c, char x);
+void	set_positions(t_list **stack);
+void	set_positions_2(t_list **stack);
 void	swap(t_list **stack, char c);
 void	push(t_list **stack_1, t_list **stack_2, char c);
 void	rotate(t_list **stack, char c);

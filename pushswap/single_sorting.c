@@ -6,11 +6,31 @@
 /*   By: mabdessm <mabdessm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 09:55:12 by mabdessm          #+#    #+#             */
-/*   Updated: 2024/07/20 05:46:52 by mabdessm         ###   ########.fr       */
+/*   Updated: 2024/07/22 10:39:03 by mabdessm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+
+void	printf_instruction(char c, char x)
+{
+	if (c == 'a' && x == 's')
+		ft_printf("sa\n");
+	else if (c == 'b' && x == 's')
+		ft_printf("sb\n");	
+	else if (c == 'a' && x == 'p')
+		ft_printf("pa\n");
+	else if (c == 'b' && x == 'p')
+		ft_printf("pb\n");
+	else if (c == 'a' && x == 'r')
+		ft_printf("ra\n");
+	else if (c == 'b' && x == 'r')
+		ft_printf("rb\n");
+	else if (c == 'a' && x == 'v')
+		ft_printf("rra\n");
+	else if (c == 'b' && x == 'v')
+		ft_printf("rrb\n");
+}
 
 void	swap(t_list **stack, char c)
 {
@@ -28,10 +48,7 @@ void	swap(t_list **stack, char c)
 	temp->prev = *stack;
 	(*stack)->pos = 0;
 	temp->pos = 1;
-	if (c == 'a')
-		ft_printf("sa\n");
-	else if (c == 'b')
-		ft_printf("sb\n");
+	printf_instruction(c, 's');
 }
 
 void	push(t_list **stack_1, t_list **stack_2, char c)
@@ -44,87 +61,60 @@ void	push(t_list **stack_1, t_list **stack_2, char c)
 	*stack_1 = *stack_2;
 	*stack_2 = (*stack_2)->next;
 	(*stack_1)->next = temp;
-	
-	// il y a un leak quand on ajoute cette partie qui est censé changer prev à 
-	// NULL du nombre que j'envoie dans stack 1 et mettre le prev du premier de stack 2 à
-	// NULL, le deuxiéme de stack 1 qui etait premier doit mtn avoir prev sur le
-	// nouveau premier, je soupconne que le leak vient de là quand stack 1 n'a pas
-	// de deuxiéme
-	
-	/*(*stack_1)->prev = NULL;
-	(*stack_1)-> pos = 0;
 	if (temp)
 		temp->prev = *stack_1;
 	temp = *stack_1;
-	while (temp->next)
-	{
-		temp->next->pos = temp->pos + 1;
-		temp = temp->next;
-	}
+	set_positions(&temp);
 	temp = *stack_2;
-	temp->prev = NULL;
-	temp->pos = 0;
-	while (temp->next)
+	if (temp)
 	{
-		temp->next->pos = temp->pos + 1;
-		temp = temp->next;
-	}*/
-	if (c == 'a')
-		ft_printf("pa\n");
-	else if (c == 'b')
-		ft_printf("pb\n");
+		temp->prev = NULL;
+		temp->pos = 0;
+		set_positions(&temp);
+	}
+	printf_instruction(c, 'p');
 }
 
 void	rotate(t_list **stack, char c)
 {
 	t_list	*temp;
-
 	t_list *last;
+	int		pos;
+
 	last = ft_lstlast(*stack);
 	if (!*stack || !(*stack)->next)
 		return ;
 	temp = *stack;
+	pos = 0;
 	*stack = (*stack)->next;
 	(*stack)->prev = NULL;
 	last->next = temp;
 	temp->prev = last;
 	temp->next = NULL;
-	
-		//old code that should be replaced by the new one if everything is right
-		///////temp = *stack;
-		///////*stack = ft_lstlast(*stack);
-		///////(*stack)->next = temp;
-		//////*stack = temp->next;
-		//////temp->next = NULL;
-	
-	t_list	*current = *stack;
-	int		pos = 0;
-	while (current)
+	temp = *stack;
+	while (temp)
 	{
-		current->pos = pos++;
-		current = current->next;
+		temp->pos = pos++;
+		temp = temp->next;
 	}
-	if (c == 'a')
-		ft_printf("ra\n");
-	else if (c == 'b')
-		ft_printf("rb\n");
+	printf_instruction(c, 'r');
 }
 
 void	reverse_rotate(t_list **stack, char c)
 {
-	//int		i;
 	t_list	*temp;
+	t_list	*tmp;
 
 	if (!*stack || !(*stack)->next)
 		return ;
 	temp = *stack;
-	t_list *tmp = NULL;
+	tmp = NULL;
 	while (temp->next)
 	{
 		tmp = temp;
 		temp = temp->next;
 	}
-	if (tmp != NULL)
+	if (tmp)
 	{
 		tmp->next = NULL;
 		temp->next = *stack;
@@ -132,32 +122,7 @@ void	reverse_rotate(t_list **stack, char c)
 		temp->prev = NULL;
 		*stack = temp;
 	}
-	
-		//old code that should be replaced or changed
-		//// i = 0;
-		//// temp = *stack;
-		//// while ((*stack)->next)
-		//// {
-		////	*stack = (*stack)->next;
-		//// 	++i;
-		//// }
-		//// (*stack)->next = temp;
-		//// while (i > 1)
-		//// {
-		//// 	temp = temp->next;
-		//// 	--i;
-		//// }
-		//// temp->next = NULL;
-
-	t_list	*current = *stack;
-	int		pos = 0;
-	while (current)
-	{
-		current->pos = pos++;
-		current = current->next;
-	}
-	if (c == 'a')
-		ft_printf("rra\n");
-	else if (c == 'b')
-		ft_printf("rrb\n");
+	temp = *stack;
+	set_positions_2(&temp);
+	printf_instruction(c, 'v');
 }
