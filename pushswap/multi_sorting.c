@@ -6,7 +6,7 @@
 /*   By: mabdessm <mabdessm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 10:01:11 by mabdessm          #+#    #+#             */
-/*   Updated: 2024/07/22 10:39:11 by mabdessm         ###   ########.fr       */
+/*   Updated: 2024/07/26 21:50:05 by mabdessm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,10 @@ void	rreverse_rrotate(t_list **stack_a, t_list **stack_b)
 	reverse_rotate(stack_b, '\0');
 	ft_printf("rrr\n");
 }
+
 void	set_positions(t_list **stack)
 {
-		while ((*stack)->next)
+	while ((*stack)->next)
 	{
 		(*stack)->next->pos = (*stack)->pos + 1;
 		*stack = (*stack)->next;

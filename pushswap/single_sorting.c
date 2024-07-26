@@ -6,7 +6,7 @@
 /*   By: mabdessm <mabdessm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 09:55:12 by mabdessm          #+#    #+#             */
-/*   Updated: 2024/07/22 10:39:03 by mabdessm         ###   ########.fr       */
+/*   Updated: 2024/07/26 21:51:08 by mabdessm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	printf_instruction(char c, char x)
 	if (c == 'a' && x == 's')
 		ft_printf("sa\n");
 	else if (c == 'b' && x == 's')
-		ft_printf("sb\n");	
+		ft_printf("sb\n");
 	else if (c == 'a' && x == 'p')
 		ft_printf("pa\n");
 	else if (c == 'b' && x == 'p')
@@ -78,7 +78,7 @@ void	push(t_list **stack_1, t_list **stack_2, char c)
 void	rotate(t_list **stack, char c)
 {
 	t_list	*temp;
-	t_list *last;
+	t_list	*last;
 	int		pos;
 
 	last = ft_lstlast(*stack);
