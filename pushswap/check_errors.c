@@ -5,69 +5,102 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mabdessm <mabdessm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/29 12:43:23 by mabdessm          #+#    #+#             */
-/*   Updated: 2024/07/14 11:28:30 by mabdessm         ###   ########.fr       */
+/*   Created: 2024/06/29 11:28:45 by mabdessm          #+#    #+#             */
+/*   Updated: 2024/07/26 21:42:13 by mabdessm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	no_error(char **argv, int argc)
+// for testing
+void	show_stacks(t_list *stack_a, t_list *stack_b)
 {
-	int	i;
-	int	j;
-
-	i = 1;
-	while (i < argc)
+	ft_printf("stack_a :\n");
+	while (stack_a)
 	{
-		j = 0;
-		if (ft_atoi(argv[i]) > 2147483647 || ft_atoi(argv[i]) < -2147483648)
-			return (0);
-		if (ft_atoi(argv[i]) < 0)
-			++j;
-		if (!argv[i][j])
-			return (0);
-		while (argv[i][j])
-		{
-			if (!(argv[i][j] >= '0' && argv[i][j] <= '9'))
-				return (0);
-			++j;
-		}
-		++i;
+		ft_printf("|\t%i\t|\n _______________\n", stack_a->content);
+		stack_a = stack_a->next;
 	}
-	return (1);
+	ft_printf("\ta\t\n");
+	ft_printf("stack_b :\n");
+	while (stack_b)
+	{
+		ft_printf("|\t%i\t|\n _______________\n", stack_b->content);
+		stack_b = stack_b->next;
+	}
+	ft_printf("\tb\t\n");
 }
 
-int	no_duplicates(char **argv, int argc)
+void	ft_sort(t_list **a, t_list **b)
 {
-	int	i;
-	int	j;
-
-	i = 1;
-	while (i < argc)
-	{
-		j = i + 1;
-		while (j < argc)
-		{
-			if (ft_atoi(argv[i]) == ft_atoi(argv[j]))
-				return (0);
-			++j;
-		}
-		++i;
-	}
-	return (1);
+	index_stack(a);
+	//show_stacks(*a, *b);
+	if (ft_lstsize(*a) <= 5)
+		sort_small_stack(a, b);
+	else
+		sort_big_stack(a, b);
+	//show_stacks(*a, *b);
 }
 
-int	a_is_sorted(t_list *a)
+void	free_if_split(int argc, char **argv)
 {
-	long	tmp;
+	int	i;
 
-	while (a && a->next)
+	i = 0;
+	if (argc == 2)
 	{
-		tmp = a->content;
-		a = a->next;
-		if (tmp > a->content)
-			return (0);
+		while (argv[i])
+		{
+			free(argv[i]);
+			++i;
+		}
+		free(argv);
 	}
-	return (1);
+}
+
+void	fill_stack(char **argv, int i, t_list *prev)
+{
+	while (argv[++i])
+	{
+		ft_lstadd_back(&prev, ft_lstnew(ft_atoi(argv[i]), prev, i));
+		prev = prev->next;
+	}
+}
+
+void	push_swap(int argc, char **argv)
+{
+	int		i;
+	t_list	*a;
+	t_list	*b;
+	t_list	*prev;
+
+	i = 0;
+	if (argc == 2)
+		argv = ft_split(argv[1], ' ');
+	if (no_error(argv, argc) && no_duplicates(argv, argc))
+	{
+		if (argc > 2)
+			i = 1;
+		a = ft_lstnew(ft_atoi(argv[i]), NULL, i);
+		b = NULL;
+		prev = a;
+		fill_stack(argv, i, prev);
+		//while (argv[++i])
+		//{
+		//	ft_lstadd_back(&prev, ft_lstnew(ft_atoi(argv[i]), prev, i));
+		//	prev = prev->next;
+		//}
+		if (!(a_is_sorted(a)))
+			ft_sort(&a, &b);
+		free_stack(&a);
+	}
+	else
+		ft_printf("Error\n");
+	free_if_split(argc, argv);
+}
+
+int	main(int argc, char **argv)
+{
+	if (argc > 1)
+		push_swap(argc, argv);
 }

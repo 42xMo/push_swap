@@ -6,7 +6,7 @@
 /*   By: mabdessm <mabdessm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 17:50:54 by mabdessm          #+#    #+#             */
-/*   Updated: 2024/07/22 10:39:33 by mabdessm         ###   ########.fr       */
+/*   Updated: 2024/07/26 21:26:32 by mabdessm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdlib.h>
 # include "../printf/ft_printf.h"
 
+int		ft_strlen_argv(char **str);
 int		no_error(char **argv, int argc);
 int		no_duplicates(char **argv, int argc);
 void	printf_instruction(char c, char x);
@@ -42,5 +43,7 @@ void	sort_five_2(t_list **a, t_list **b);
 void	sort_small_stack(t_list **a, t_list **b);
 void	sort_big_stack(t_list **a, t_list **b);
 void	ft_sort(t_list **a, t_list **b);
+void	free_if_split(int argc, char **argv);
+void	push_swap(int argc, char **argv);
 
 #endif
