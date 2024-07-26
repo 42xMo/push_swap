@@ -6,7 +6,7 @@
 /*   By: mabdessm <mabdessm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/29 11:28:45 by mabdessm          #+#    #+#             */
-/*   Updated: 2024/07/26 21:42:02 by mabdessm         ###   ########.fr       */
+/*   Updated: 2024/07/26 21:47:46 by mabdessm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,6 @@ void	fill_stack(char **argv, int i, t_list *prev)
 		ft_lstadd_back(&prev, ft_lstnew(ft_atoi(argv[i]), prev, i));
 		prev = prev->next;
 	}
-	ft_printf("yoyo");
 }
 
 void	push_swap(int argc, char **argv)
@@ -86,11 +85,6 @@ void	push_swap(int argc, char **argv)
 		b = NULL;
 		prev = a;
 		fill_stack(argv, i, prev);
-		//while (argv[++i])
-		//{
-		//	ft_lstadd_back(&prev, ft_lstnew(ft_atoi(argv[i]), prev, i));
-		//	prev = prev->next;
-		//}
 		if (!(a_is_sorted(a)))
 			ft_sort(&a, &b);
 		free_stack(&a);
