@@ -6,7 +6,7 @@
 /*   By: mabdessm <mabdessm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/02 15:34:26 by mabdessm          #+#    #+#             */
-/*   Updated: 2024/08/02 15:43:03 by mabdessm         ###   ########.fr       */
+/*   Updated: 2024/08/02 15:48:23 by mabdessm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,14 +43,6 @@ void	rotate_optimally(t_list **a, int rotate_x, int number_moves)
 	}
 }
 
-void	place_on_top(t_list **a, int mv_f, int mv_s, int rt_f, int rt_s)
-{
-	if (mv_f <= mv_s)
-		rotate_optimally(a, rt_f, mv_f);
-	else if (mv_f > mv_s)
-		rotate_optimally(a, rt_s, mv_s);
-}
-
 void	compare_moves_and_push(t_list **a, t_list **b, int pos_st, int pos_sec)
 {
 	int	rotate_first;
@@ -62,7 +54,10 @@ void	compare_moves_and_push(t_list **a, t_list **b, int pos_st, int pos_sec)
 	rotate_second = 0;
 	moves_first = number_of_moves(a, pos_st, &rotate_first);
 	moves_second = number_of_moves(a, pos_sec, &rotate_second);
-	place_on_top(a, moves_first, moves_second, rotate_first, rotate_second);
+	if (moves_first <= moves_second)
+		rotate_optimally(a, rotate_first, moves_first);
+	else if (moves_first > moves_second)
+		rotate_optimally(a, rotate_second, moves_second);
 	push(b, a, 'b');
 }
 

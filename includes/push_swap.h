@@ -6,7 +6,7 @@
 /*   By: mabdessm <mabdessm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 17:50:54 by mabdessm          #+#    #+#             */
-/*   Updated: 2024/08/02 15:42:50 by mabdessm         ###   ########.fr       */
+/*   Updated: 2024/08/02 15:49:03 by mabdessm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,6 @@ void	scan_top(t_list **a, int *pos_first, int i, int j);
 void	scan_bot(t_list **a, int *pos_second, int i, int j);
 int		number_of_moves(t_list **a, int pos, int *rotate_x);
 void	rotate_optimally(t_list **a, int rotate_x, int number_moves);
-void	place_on_top(t_list **a, int mv_f, int mv_s, int rt_f, int rt_s);
 int		chunk_still_exists(t_list **a, int i, int j);
 void	compare_moves_and_push(t_list **a, t_list **b, int pos_st, int pos_sec);
 void	find_optimal_push(t_list **a, t_list **b, int start, int end);
