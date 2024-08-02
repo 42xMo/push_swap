@@ -6,7 +6,7 @@
 /*   By: mabdessm <mabdessm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/02 15:34:26 by mabdessm          #+#    #+#             */
-/*   Updated: 2024/08/02 16:34:39 by mabdessm         ###   ########.fr       */
+/*   Updated: 2024/08/02 17:56:38 by mabdessm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,22 @@ void	rotate_optimally(t_list **a, int rotate_x, int number_moves)
 	}
 }
 
+int	bigger_than_b(int i, t_list **b)
+{
+	t_list	*temp;
+
+	temp = *b;
+	if (temp->next)
+		temp = temp->next;
+	while (temp)
+	{
+		if (temp->index > i)
+			return (0);
+		temp = temp->next;
+	}
+	return (1);
+}
+
 void	compare_moves_and_push(t_list **a, t_list **b, int pos_st, int pos_sec)
 {
 	int	rotate_first;
@@ -59,6 +75,8 @@ void	compare_moves_and_push(t_list **a, t_list **b, int pos_st, int pos_sec)
 	else if (moves_first > moves_second)
 		rotate_optimally(a, rotate_second, moves_second);
 	push(b, a, 'b');
+	if (bigger_than_b((*b)->index, b))
+		rotate(b, 'b');
 }
 
 void	find_optimal_push(t_list **a, t_list **b, int start, int end)
