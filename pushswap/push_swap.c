@@ -6,13 +6,13 @@
 /*   By: mabdessm <mabdessm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/29 11:28:45 by mabdessm          #+#    #+#             */
-/*   Updated: 2024/07/31 14:51:06 by mabdessm         ###   ########.fr       */
+/*   Updated: 2024/08/02 13:49:57 by mabdessm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-// for testing
+/* for testing
 void	show_stacks(t_list *stack_a, t_list *stack_b)
 {
 	ft_printf("stack_a :\n");
@@ -29,17 +29,15 @@ void	show_stacks(t_list *stack_a, t_list *stack_b)
 		stack_b = stack_b->next;
 	}
 	ft_printf("\tb\t\n");
-}
+}*/
 
 void	ft_sort(t_list **a, t_list **b)
 {
 	index_stack(a);
-	//show_stacks(*a, *b);
 	if (ft_lstsize(*a) <= 5)
 		sort_small_stack(a, b);
 	else
 		sort_big_stack(a, b);
-	//show_stacks(*a, *b);
 }
 
 void	free_if_split(int argc, char **argv)

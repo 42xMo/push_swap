@@ -6,13 +6,13 @@
 #    By: mabdessm <mabdessm@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/06 14:24:37 by mabdessm          #+#    #+#              #
-#    Updated: 2024/07/31 13:23:52 by mabdessm         ###   ########.fr        #
+#    Updated: 2024/08/02 15:39:44 by mabdessm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 CC = cc
-FLAGS = -Wall -Werror -Wextra -Iincludes #-fsanitize=address
+FLAGS = -Wall -Werror -Wextra -Iincludes -fsanitize=address
 RM = rm -rf
 
 SRCS = libft/ft_atoi.c libft/ft_bzero.c libft/ft_calloc.c libft/ft_isalnum.c \
@@ -34,7 +34,9 @@ SRCS = libft/ft_atoi.c libft/ft_bzero.c libft/ft_calloc.c libft/ft_isalnum.c \
 		printf/ft_putnbr_base.c printf/ft_putnbr_base_p.c \
 		pushswap/push_swap.c pushswap/check_errors.c pushswap/index_utils.c \
 		pushswap/single_sorting.c pushswap/multi_sorting.c \
-		pushswap/sort_small_stack.c pushswap/sort_big_stack.c
+		pushswap/sort_small_stack.c pushswap/scan_stack.c \
+		pushswap/find_optimal_push.c pushswap/sort_back.c \
+		pushswap/sort_big_stack.c
 
 OBJS = $(SRCS:.c=.o)
 
